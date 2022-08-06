@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NMV9GTMQ87"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-NMV9GTMQ87');
+  </script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AIがESを書くサイト</title>
+
+
+
+  <meta name="description" content="AIにESを書かせることのできるサイトです。訓練には十万件以上のESを用いました。志望理由以外にもガクチカやその他の曖昧な質問にも答えることができます。">
+
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/font-family.css">
+  <link rel="shortcut icon" href="../static/images/app/robot.png" type="image/x-icon">
+  <link rel=”apple-touch-icon” href=”../static/images/app/robot.png”>
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+
+    body {
+      background-color: dimgray;
+    }
+
+    .container {
+      max-width: 960px;
+    }
+
+    .pricing-header {
+      max-width: 700px;
+    }
+
+    /* copy button */
+    .copy-button {
+      position: relative
+    }
+
+    .tip {
+      background-color: #263646;
+      padding: 0 14px;
+      line-height: 27px;
+      position: absolute;
+      border-radius: 4px;
+      z-index: 100;
+      color: #fff;
+      font-size: 12px;
+      animation-name: tip;
+      animation-duration: .6s;
+      animation-fill-mode: both
+    }
+
+    .tip:before {
+      content: "";
+      background-color: #263646;
+      height: 10px;
+      width: 10px;
+      display: block;
+      position: absolute;
+      transform: rotate(45deg);
+      top: -4px;
+      left: 17px
+    }
+
+    #copied_tip {
+      animation-name: come_and_leave;
+      animation-duration: 1s;
+      animation-fill-mode: both;
+      bottom: -35px;
+      left: 2px
+    }
+
+  </style>
+
+
+</head>
+
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <nav class="bg-dark navbar-dark">
+    <div class="container-sm">
+      <a href="/" class="navbar-brand">🤖AIがESを書くサイト</a>
+    </div>
+  </nav>
+
+  <!-- heroe start -->
+  <div class="px-4 py-5 my-5 text-center bg-dark text-white">
+    <h1 class="display-5 fw-bold mb-5">寄付する</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4 lh-lg">
+        いつもこのサイトを利用していただきありがとうございます
+      </p>
+      <p class="lead mb-4 lh-lg">
+        このサイトは寄付によって運営されています<br>今後のサービスの継続のため、寄付をしてくれるととても助かります。
+      </p>
+      <p class="lead mb-4 lh-lg">
+        送金方法は<strong>仮想通貨</strong>と<strong>PayPay払い</strong>の二種類がありますが仮想通貨の場合は<br>送金手数料がかかるのでPayPay払いが最も適していると思います。<br>
+      </p>
+      <p class="lead mb-4 lh-lg">
+        ここまで読んでいただきありがとうございます。<br>それではよい一日を！
+      </p>
+
+    </div>
+  </div>
+
+
+  <div class="container py-3">
+
+
+    <main>
+
+      <!-- donation start -->
+      <div class="card mb-5 border-secondary rounded-5 shadow-sm p-3">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="../static/images/donation/paypay.jpg" alt="..." class="overflow-hidden w-100 p-3">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body lh-lg">
+              <h5 class="card-title">PayPay残高で払う</h5>
+              <p class="card-text">PayPayIDを使うことでPayPayのアプリだけで簡単に、しかも手数料ゼロで
+                送金をすることができます。<br>
+                PayPayIDは <span class="text-decoration-underline fw-bold fs-5">huranokuma</span> です。<br>
+                <small class="text-secondary">［PayPay ID］を宛て先としてPayPay残高を送るためにはアプリのホーム画面で［送る］を選択します。
+                  次に、［携帯電話番号・PayPay IDを検索］を選択します。［PayPay ID］を入力すると名前には<span
+                    class="text-decoration-underline">huranokuma</span>と表示されるので確認してください。<br>
+                  最後に、送る金額を入力して送金してください。
+                </small><br>
+                <a href="https://paypay.ne.jp/guide/send/" class="link-primary">公式HP</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mb-5 border-secondary rounded-5 shadow-sm p-3">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="../static/images/donation/bitcoin.png" alt="..." class="overflow-hidden w-50 p-3 d-block mx-auto">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body lh-lg">
+              <h5 class="card-title">BitCoinで払う</h5>
+              <p class="card-text"><small class="text-secondary">ビットコインのアドレスです</small><br>
+                <span class="fw-bold">35susrhiXY4Cxd4t8pA2q4N96zrZ7zUvD4</span><span><button
+                    onclick="copy('35susrhiXY4Cxd4t8pA2q4N96zrZ7zUvD4','#copy_button_1')" id="copy_button_1"
+                    class="btn btn-sm btn-outline-danger ms-3 copy-button rounded-pill">Copy</button></span>
+
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mb-5 border-secondary rounded-5 shadow-sm p-3">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="../static/images/donation/ETH.png" alt="..." class="overflow-hidden w-50 p-3 d-block mx-auto">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body lh-lg">
+              <h5 class="card-title">イーサリアムで払う</h5>
+              <p class="card-text"><small class="text-secondary">イーサリアムのアドレスです</small><br>
+                <strong>0xc93c6bf0a9b1c0b698faac02fe6c03bcff357de7</strong>
+                <button onclick="copy('0xc93c6bf0a9b1c0b698faac02fe6c03bcff357de7','#copy_button_2')" id="copy_button_2"
+                  class="btn btn-sm btn-outline-danger ms-3 copy-button rounded-pill">Copy</button>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-5 border-secondary rounded-5 shadow-sm p-3">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="../static/images/donation/XRP.png" alt="..." class="overflow-hidden w-50 p-3 d-block mx-auto">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body lh-lg">
+              <h5 class="card-title">XRP（リップル）で払う</h5>
+              <p class="card-text"><small class="text-secondary">リップルを使えば他の仮想通貨よりも低い手数料で送金することが可能です。</small><br>
+                Address:<strong> rpct6vuKL2bcJq9FFygAsYNMVXyXirwPeL</strong>
+                <button onclick="copy('rpct6vuKL2bcJq9FFygAsYNMVXyXirwPeL','#copy_button_3')" id="copy_button_3"
+                  class="btn btn-sm btn-outline-danger ms-3 copy-button rounded-pill">Copy</button><br>Tag:
+                <strong> 88744917</strong>
+                <button onclick="copy('88744917','#copy_button_4')" id="copy_button_4"
+                  class="btn btn-sm btn-outline-danger ms-3 copy-button rounded-pill">Copy</button>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- donation end -->
+
+
+      <!-- promotion start -->
+      <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+        <div class="col">
+          <div class="card mb-4 rounded-3 shadow-sm border-secondary h-100">
+            <div class="card-header py-3">
+              <h4 class="my-0 fw-normal ">コーヒー☕</h4>
+
+            </div>
+            <div class="card-body">
+              <h1 class="card-title pricing-card-title">100円<small class="text-muted fw-light">/杯</small></h1>
+              <p class="mt-3 mb-4">
+                個人的にコーヒーをおごってください。
+              <p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card mb-4 rounded-3 shadow-sm border-secondary h-100">
+            <div class="card-header py-3">
+              <h4 class="my-0 fw-normal">サーバー代💻</h4>
+            </div>
+            <div class="card-body">
+              <h1 class="card-title pricing-card-title">1,500円<small class="text-muted fw-light">/月</small></h1>
+
+              <p class="mt-3 mb-4">
+                サーバーを動かす費用,そしてドメインを取得する費用です。<br>
+                それに加えてモデルを動かすAPIの値段も含まれています。
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card mb-4 rounded-3 shadow-sm border-secondary h-100">
+            <div class="card-header py-3">
+              <h4 class="my-0 fw-normal">GPU💽</h4>
+            </div>
+            <div class="card-body">
+              <h1 class="card-title pricing-card-title">5,000円<small class="text-muted fw-light">/月</small></h1>
+
+              <p class="mt-3 mb-4">
+                文章を生成には大量のESに加えて,<br>
+                大量の計算を行うための高性能のGPUが必要となります。<br>
+                訓練にはGoogle Colaboratoryを使用しています。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- promotion end -->
+
+  </div>
+
+  </main>
+  </div>
+
+
+
+  <!-- footer start -->
+  <footer class="container">
+    <p class="float-end"><a href="#" class="text-danger">上に戻る</a></p>
+  </footer>
+  <!-- footer end -->
+
+  <!-- script for copy button start -->
+  <script>
+    function copy(text, target) {
+      setTimeout(function () {
+        $('#copied_tip').remove();
+      }, 800);
+      $(target).append("<div class='tip' id='copied_tip'>Copied!</div>");
+      var input = document.createElement('input');
+      input.setAttribute('value', text);
+      document.body.appendChild(input);
+      input.select();
+      var result = document.execCommand('copy');
+      document.body.removeChild(input)
+      return result;
+    }
+  </script>
+  <!-- script for copy button end -->
+
+
+</body>
+
+</html>
