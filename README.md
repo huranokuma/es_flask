@@ -14,3 +14,4 @@ https://huggingface.co/huranokuma/es
 - ウェブアプリ
 http://www.eswrite.com
 
+2022/11/15　出力されるESの文字数を多くしました。
