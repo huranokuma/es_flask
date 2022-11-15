@@ -37,7 +37,7 @@ async def app1():
             max_length=100
         start = time.time()
 
-        sentence,elapsed_time= await catch_sentence(prompt_text=prompt_text,max_length=max_length)
+        sentence,elapsed_time= await catch_sentence(prompt_text=prompt_text,max_length=500, min_length=max_length) # 今までのマックスレングスをミニマムにする
 
         result={
             'sentence':sentence,
